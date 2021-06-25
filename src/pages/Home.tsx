@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { auth, firebase } from '../services/firebase';
@@ -11,21 +12,18 @@ import '../styles/auth.scss';
 
 import { Button } from '../components/Button';
 
+
 export function Home() {
     const history = useHistory();
 
     function handleCreateRom() {
-        const provider = new firebase.auth.GoogleAuthProvider();
-        auth.signInWithPopup(provider).then(result =>{
-            console.log(result);
-
             history.push('/rooms/new');
-        })
+    }
         
     }
 
     return (
-        <div id="page-auth">
+        <div id="page-auth">            
             <aside>
                 <img src={illustrationImg} alt="ilustracao simbolizando perguntas e respostas" /> 
                 <strong>Crie salas de Q&amp;A</strong>

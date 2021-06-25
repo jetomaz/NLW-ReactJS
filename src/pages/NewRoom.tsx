@@ -8,6 +8,8 @@ import { placeholder } from '@babel/types';
 import '../styles/auth.scss';
 
 import { Button } from '../components/Button';
+import { useContext } from 'react';
+import { TestContext } from '../App';
 
 export function NewRoom() {
     return (
